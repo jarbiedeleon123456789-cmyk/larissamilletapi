@@ -72,6 +72,8 @@ $router->post('/api/auth/logout', 'AuthController::logout');
 $router->get('/api/auth/me', 'AuthController::me');
 $router->get('/api/users', 'UserController::index');
 $router->post('/api/users', 'UserController::store');
+$router->put('/api/users/{id}', 'UserController::update');
+$router->delete('/api/users/{id}', 'UserController::destroy');
 
 $router->get('/api/products', 'ProductController::index');
 $router->post('/api/products', 'ProductController::store');
