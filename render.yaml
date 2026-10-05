@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: marrows-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: REFRESH_TOKEN_KEY
+        generateValue: true
+      - key: DB_DRIVER
+        value: mysql
+      - key: DB_CHARSET
+        value: utf8mb4
+      - key: DB_SSL
+        value: "true"
+      - key: DB_SSL_VERIFY
+        value: "false"
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
+      - key: ADMIN_USERNAME
+        value: marrows
+      - key: ADMIN_EMAIL
+        value: staff@marrows.com
+      - key: ADMIN_PASSWORD
+        sync: false
