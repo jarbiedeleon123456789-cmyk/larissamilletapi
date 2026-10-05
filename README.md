@@ -18,8 +18,12 @@ JSON API for the Marrows restaurant site. Built on LavaLust-dev-v4, MySQL on Aiv
 | GET | `/api/reservations` | Bearer | List reservations |
 | PATCH / DELETE | `/api/reservations/{id}` | Bearer | Confirm or cancel / delete |
 
+`GET /api/users` lists users for administrators only. `POST /api/users` publicly registers a regular user from `username`, `email`, and `password` (minimum 8 characters); any submitted role is ignored, and password hashes are never returned.
+
 Product CRUD is protected by the LavaLust `Api` library (JWT, refresh tokens, per-request user check, rate limiting).
 `products` follows Laboratory Exercise No. 6 (`id, product_name, description, price, quantity, created_at`) plus a `category` column for menu courses.
+
+To use the LavaLust API Tester, set its Base URL to `https://<your-api-host>/api`, then set Create to `/users`, Login to `/auth/login`, Logout to `/auth/logout`, Profile to `/auth/me`, and List to `/users`.
 
 ## Migrations
 

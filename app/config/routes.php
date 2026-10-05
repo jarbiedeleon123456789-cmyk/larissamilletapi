@@ -70,6 +70,8 @@ $router->post('/api/auth/logout', 'AuthController::logout');
 
 // Protected API (Bearer token)
 $router->get('/api/auth/me', 'AuthController::me');
+$router->get('/api/users', 'UserController::index');
+$router->post('/api/users', 'UserController::store');
 
 $router->get('/api/products', 'ProductController::index');
 $router->post('/api/products', 'ProductController::store');
